@@ -64,6 +64,7 @@ export function signOut() {
 }
 
 export default all([
+  takeLatest('@auth/SIGN_IN_SUCCESS', setToken),
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest('@auth/SIGN_IN_REQUEST', signIn),
   takeLatest('@auth/SIGN_UP_REQUEST', signUp),
